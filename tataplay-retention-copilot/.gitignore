@@ -1,0 +1,25 @@
+# Python virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables and API keys
+.env
+.env.*
+
+# ChromaDB
+chroma_db/
+
+# Database files
+*.db
+
+# Generated outputs
+outputs/*
+
+# VS Code settings
+.vscode/
+
+data/
