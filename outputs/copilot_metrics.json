@@ -1,0 +1,13 @@
+{
+  "valid_briefs": 15,
+  "risk_band_counts": {
+    "High": 14,
+    "Medium": 1
+  },
+  "recommended_action_counts": {
+    "Offer a free add-on pack for 2 months.": 6,
+    "Offer an auto-renew setup call and a 7 day grace extension.": 4,
+    "Offer a loyalty discount of 15 percent on the next three recharges.": 4,
+    "No retention offer applies; keep monitoring the account.": 1
+  }
+}

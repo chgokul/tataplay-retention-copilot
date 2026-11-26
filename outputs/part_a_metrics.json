@@ -1,0 +1,311 @@
+{
+  "raw_subscribers": {
+    "column_audit": {
+      "shape": [
+        2415,
+        17
+      ],
+      "dtypes": {
+        "subscriber_id": "object",
+        "city": "object",
+        "plan_id": "object",
+        "tenure_months": "int64",
+        "age": "float64",
+        "payment_mode": "object",
+        "auto_renew": "object",
+        "add_on_count": "int64",
+        "monthly_recharge_inr": "int64",
+        "hours_watched_per_week": "float64",
+        "hd_hours_per_week": "float64",
+        "sports_hours_per_week": "float64",
+        "channels_watched": "int64",
+        "support_calls_90d": "int64",
+        "closure_request_logged": "object",
+        "next_cycle_recharge_inr": "float64",
+        "churned": "int64"
+      },
+      "missing": {
+        "subscriber_id": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "city": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "plan_id": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "tenure_months": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "age": {
+          "missing_count": 99,
+          "missing_pct": 4.0994
+        },
+        "payment_mode": {
+          "missing_count": 116,
+          "missing_pct": 4.8033
+        },
+        "auto_renew": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "add_on_count": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "monthly_recharge_inr": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "hours_watched_per_week": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "hd_hours_per_week": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "sports_hours_per_week": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "channels_watched": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "support_calls_90d": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "closure_request_logged": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "next_cycle_recharge_inr": {
+          "missing_count": 516,
+          "missing_pct": 21.3665
+        },
+        "churned": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        }
+      }
+    },
+    "summary": {
+      "rows": 2415,
+      "exact_duplicates": 15,
+      "distinct_subscriber_id": 2400,
+      "blank_age": 99,
+      "age_outside_10_100": 6,
+      "blank_payment_mode": 116,
+      "distinct_raw_city_spellings": 22,
+      "distinct_raw_auto_renew_spellings": 6,
+      "blank_next_cycle_recharge": 516
+    }
+  },
+  "raw_recharges": {
+    "column_audit": {
+      "shape": [
+        13055,
+        6
+      ],
+      "dtypes": {
+        "recharge_id": "object",
+        "subscriber_id": "object",
+        "recharge_date": "object",
+        "amount_inr": "object",
+        "status": "object",
+        "channel": "object"
+      },
+      "missing": {
+        "recharge_id": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "subscriber_id": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "recharge_date": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "amount_inr": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "status": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        },
+        "channel": {
+          "missing_count": 0,
+          "missing_pct": 0.0
+        }
+      }
+    },
+    "summary": {
+      "rows": 13055,
+      "exact_duplicates": 60,
+      "distinct_recharge_id": 12995,
+      "non_numeric_amounts": 366,
+      "distinct_raw_status_spellings": 6,
+      "orphan_subscriber_rows": 10
+    }
+  },
+  "cleaning": {
+    "subscribers_remaining": 2400,
+    "recharges_remaining": 12985,
+    "orphan_recharge_rows_removed": 10,
+    "invalid_ages_set_missing": 6,
+    "recharge_amounts_rebuilt": 364,
+    "city_counts": {
+      "Mumbai": 524,
+      "Delhi": 436,
+      "Chennai": 391,
+      "Bengaluru": 386,
+      "Hyderabad": 262,
+      "Pune": 245,
+      "Kolkata": 156
+    },
+    "auto_renew_counts": {
+      "No": 1355,
+      "Yes": 1045
+    },
+    "missing_age_after_cleaning": 104,
+    "missing_payment_mode_after_cleaning": 114,
+    "churned": 514,
+    "churn_rate": 0.21416666666666667,
+    "recharge_status_counts": {
+      "success": 11442,
+      "failed": 1422,
+      "pending": 121
+    },
+    "successful_recharge_amount_inr": 6457573.0
+  },
+  "sql": {
+    "q1": [
+      {
+        "plan_name": "Premium",
+        "revenue_inr": 1471199.0,
+        "avg_recharge_inr": 860.35,
+        "subscribers": 339
+      },
+      {
+        "plan_name": "Standard",
+        "revenue_inr": 1323622.0,
+        "avg_recharge_inr": 492.6,
+        "subscribers": 559
+      },
+      {
+        "plan_name": "Standard HD",
+        "revenue_inr": 1283471.0,
+        "avg_recharge_inr": 645.61,
+        "subscribers": 407
+      },
+      {
+        "plan_name": "Premium Plus",
+        "revenue_inr": 1262398.0,
+        "avg_recharge_inr": 1075.3,
+        "subscribers": 228
+      },
+      {
+        "plan_name": "Basic",
+        "revenue_inr": 782554.0,
+        "avg_recharge_inr": 326.61,
+        "subscribers": 493
+      },
+      {
+        "plan_name": "Basic Lite",
+        "revenue_inr": 334329.0,
+        "avg_recharge_inr": 224.83,
+        "subscribers": 298
+      }
+    ],
+    "pandas_premium_check": {
+      "sum": 1471199.0,
+      "mean": 860.3502923976608
+    },
+    "q2_count": 76,
+    "q2_zero_tenure": 68,
+    "q3_rank1_counts": {
+      "Bengaluru": 10,
+      "Chennai": 10,
+      "Delhi": 5,
+      "Hyderabad": 5,
+      "Kolkata": 2,
+      "Mumbai": 6,
+      "Pune": 4
+    },
+    "q3_kolkata_top_four": [
+      {
+        "city": "Kolkata",
+        "subscriber_id": "TP00074",
+        "total": 6876.0,
+        "rnk": 1,
+        "dense_rnk": 1,
+        "row_num": 1
+      },
+      {
+        "city": "Kolkata",
+        "subscriber_id": "TP00917",
+        "total": 6876.0,
+        "rnk": 1,
+        "dense_rnk": 1,
+        "row_num": 2
+      },
+      {
+        "city": "Kolkata",
+        "subscriber_id": "TP00143",
+        "total": 6582.0,
+        "rnk": 3,
+        "dense_rnk": 2,
+        "row_num": 3
+      },
+      {
+        "city": "Kolkata",
+        "subscriber_id": "TP01355",
+        "total": 6582.0,
+        "rnk": 3,
+        "dense_rnk": 2,
+        "row_num": 4
+      }
+    ],
+    "q4": [
+      {
+        "recharge_id": "R000053",
+        "recharge_date": "2025-10-15",
+        "amount_inr": 498.0,
+        "running_total": 498.0
+      },
+      {
+        "recharge_id": "R000055",
+        "recharge_date": "2025-12-15",
+        "amount_inr": 498.0,
+        "running_total": 996.0
+      },
+      {
+        "recharge_id": "R000056",
+        "recharge_date": "2026-01-15",
+        "amount_inr": 498.0,
+        "running_total": 1494.0
+      },
+      {
+        "recharge_id": "R000057",
+        "recharge_date": "2026-02-15",
+        "amount_inr": 498.0,
+        "running_total": 1992.0
+      },
+      {
+        "recharge_id": "R000058",
+        "recharge_date": "2026-03-13",
+        "amount_inr": 498.0,
+        "running_total": 2490.0
+      }
+    ]
+  }
+}

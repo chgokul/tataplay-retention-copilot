@@ -1,0 +1,124 @@
+{
+  "client_demos": {
+    "unauthorized_status": 401,
+    "wrong_url_status": 404,
+    "max_tokens_3_finish_reason": "length",
+    "no_memory_answer": "I do not know your name.",
+    "same_request_with_history_answer": "Your name is Asha.",
+    "thirty_calls_rate_limits_recovered": 3,
+    "physical_post_calls": 33
+  },
+  "pydantic_smoke_tests": {
+    "string_3_converted_to": {
+      "value": 3,
+      "type": "int"
+    },
+    "urgency_9": [
+      {
+        "field": "urgency",
+        "error_type": "less_than_equal"
+      }
+    ],
+    "category_refund": [
+      {
+        "field": "category",
+        "error_type": "literal_error"
+      }
+    ]
+  },
+  "classifier": {
+    "weak": {
+      "valid_labels": 0,
+      "correct": 0,
+      "accuracy": 0.0,
+      "recovered_rate_limits": 18,
+      "mock_post_calls": 164
+    },
+    "zero_shot": {
+      "valid_labels": 146,
+      "correct": 123,
+      "accuracy": 0.8424657534246576,
+      "recovered_rate_limits": 18,
+      "mock_post_calls": 164
+    },
+    "few_shot": {
+      "valid_labels": 146,
+      "correct": 142,
+      "accuracy": 0.9726027397260274,
+      "recovered_rate_limits": 18,
+      "mock_post_calls": 164
+    }
+  },
+  "few_shot_wrong_tickets": [
+    {
+      "ticket_id": "T0041",
+      "true_category": "plan_change",
+      "zero_shot": "billing",
+      "few_shot": "billing"
+    },
+    {
+      "ticket_id": "T0094",
+      "true_category": "cancellation",
+      "zero_shot": "signal",
+      "few_shot": "signal"
+    },
+    {
+      "ticket_id": "T0110",
+      "true_category": "signal",
+      "zero_shot": "signal",
+      "few_shot": "cancellation"
+    },
+    {
+      "ticket_id": "T0136",
+      "true_category": "signal",
+      "zero_shot": "signal",
+      "few_shot": "cancellation"
+    }
+  ],
+  "extraction": {
+    "status_counts": {
+      "valid": 146,
+      "manual_review": 4
+    },
+    "first_attempt_failures": {
+      "invalid_json_chatty": 12,
+      "urgency_out_of_range": 6,
+      "invalid_category": 10,
+      "unreadable_ticket": 4
+    },
+    "rate_limits_recovered": 23,
+    "valid_records": 146,
+    "wants_refund_true": 31,
+    "null_subscriber_id": 75
+  },
+  "rag": {
+    "chunk_count_400_60": 13,
+    "answerable_count": 12,
+    "unanswerable_count": 4,
+    "top3_file_hits": 12,
+    "top1_file_hits": 12,
+    "answerable_top1_similarity": {
+      "min": 0.33399319648742676,
+      "max": 0.6365547776222229,
+      "mean": 0.5135308603445689
+    },
+    "unanswerable_top1_similarities": [
+      0.06939202547073364,
+      -0.046615004539489746,
+      0.2954450845718384,
+      0.30370229482650757
+    ],
+    "keyword_baseline_top1_correct": 9,
+    "rejection_threshold": 0.31884774565696716,
+    "answerable_unanswerable_similarity_gap": 0.03029090166091919,
+    "grounded_expected_facts": 12,
+    "unanswerable_fallbacks": 4,
+    "ungrounded_unique_answers": 1,
+    "small_chunk_count": 25,
+    "small_top3_fact_hits": 11,
+    "small_grounded_fact_hits": 8,
+    "rate_limits_recovered": 4,
+    "closest_unanswerable_question": "Is international roaming available on the mobile app?",
+    "closest_unanswerable_similarity": 0.30370229482650757
+  }
+}

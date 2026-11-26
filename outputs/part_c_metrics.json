@@ -1,0 +1,214 @@
+{
+  "k_scores": [
+    {
+      "k": 2,
+      "inertia": 3728.218940329597,
+      "silhouette": 0.4199240208026058
+    },
+    {
+      "k": 3,
+      "inertia": 2812.958402870879,
+      "silhouette": 0.3463761200943379
+    },
+    {
+      "k": 4,
+      "inertia": 2193.9331750253687,
+      "silhouette": 0.3400109580284944
+    },
+    {
+      "k": 5,
+      "inertia": 1781.0921278785045,
+      "silhouette": 0.3433652794755344
+    },
+    {
+      "k": 6,
+      "inertia": 1502.4758191592905,
+      "silhouette": 0.34402889184125757
+    },
+    {
+      "k": 7,
+      "inertia": 1292.830430970912,
+      "silhouette": 0.3638109368290012
+    },
+    {
+      "k": 8,
+      "inertia": 1191.4168779480945,
+      "silhouette": 0.3355320518462635
+    }
+  ],
+  "chosen_k": 4,
+  "segment_profile": [
+    {
+      "segment_id": 0,
+      "size": 593,
+      "mean_tenure": 23.58347386172007,
+      "mean_hours": 7.077065767284991,
+      "mean_monthly": 301.3254637436762,
+      "churn_rate": 0.224283305227656,
+      "segment_name": "Value",
+      "recommended_action": "Offer low-cost plan optimisation"
+    },
+    {
+      "segment_id": 1,
+      "size": 543,
+      "mean_tenure": 34.16206261510129,
+      "mean_hours": 22.238858195211787,
+      "mean_monthly": 559.7274401473296,
+      "churn_rate": 0.13443830570902393,
+      "segment_name": "Engaged",
+      "recommended_action": "Promote content bundles aligned with viewing"
+    },
+    {
+      "segment_id": 2,
+      "size": 480,
+      "mean_tenure": 34.202083333333334,
+      "mean_hours": 33.638958333333335,
+      "mean_monthly": 942.3229166666666,
+      "churn_rate": 0.10625,
+      "segment_name": "Premium",
+      "recommended_action": "Protect premium experience; offer relevant add-ons"
+    },
+    {
+      "segment_id": 3,
+      "size": 784,
+      "mean_tenure": 6.316326530612245,
+      "mean_hours": 14.85076530612245,
+      "mean_monthly": 513.5076530612245,
+      "churn_rate": 0.3278061224489796,
+      "segment_name": "At-Risk",
+      "recommended_action": "Proactive retention outreach and recharge-friction support"
+    }
+  ],
+  "new_subscriber_assignment": {
+    "nearest_segment_id": 3,
+    "segment_name": "At-Risk",
+    "distances": [
+      1.7082664758029578,
+      2.0936650109779604,
+      3.1170353547743077,
+      0.15294718585367373
+    ],
+    "predict": 3
+  },
+  "correlation_matrix": {
+    "hours_watched_per_week": {
+      "hours_watched_per_week": 1.0,
+      "hd_hours_per_week": 0.9788028063238217,
+      "sports_hours_per_week": 0.9469007133701174,
+      "channels_watched": 0.9378396051698829
+    },
+    "hd_hours_per_week": {
+      "hours_watched_per_week": 0.9788028063238217,
+      "hd_hours_per_week": 1.0,
+      "sports_hours_per_week": 0.9266893059580039,
+      "channels_watched": 0.9208447778701108
+    },
+    "sports_hours_per_week": {
+      "hours_watched_per_week": 0.9469007133701174,
+      "hd_hours_per_week": 0.9266893059580039,
+      "sports_hours_per_week": 1.0,
+      "channels_watched": 0.8913728774497703
+    },
+    "channels_watched": {
+      "hours_watched_per_week": 0.9378396051698829,
+      "hd_hours_per_week": 0.9208447778701108,
+      "sports_hours_per_week": 0.8913728774497703,
+      "channels_watched": 1.0
+    }
+  },
+  "correlation_pairs_abs_gt_0_9": [
+    {
+      "feature_1": "hours_watched_per_week",
+      "feature_2": "hd_hours_per_week",
+      "correlation": 0.9788028063238217
+    },
+    {
+      "feature_1": "hours_watched_per_week",
+      "feature_2": "sports_hours_per_week",
+      "correlation": 0.9469007133701174
+    },
+    {
+      "feature_1": "hours_watched_per_week",
+      "feature_2": "channels_watched",
+      "correlation": 0.9378396051698829
+    },
+    {
+      "feature_1": "hd_hours_per_week",
+      "feature_2": "sports_hours_per_week",
+      "correlation": 0.9266893059580039
+    },
+    {
+      "feature_1": "hd_hours_per_week",
+      "feature_2": "channels_watched",
+      "correlation": 0.9208447778701108
+    }
+  ],
+  "spend_split": {
+    "train_rows": 1508,
+    "test_rows": 378
+  },
+  "spend_model": {
+    "linear": {
+      "best_alpha": null,
+      "cv_r2": 0.9941145199647703,
+      "test_r2": 0.9929951843387628,
+      "mae": 20.15673505980179,
+      "rmse": 24.701480538036595
+    },
+    "ridge": {
+      "best_alpha": 0.01,
+      "cv_r2": 0.9941145214761355,
+      "test_r2": 0.9929954387100552,
+      "mae": 20.156357101031677,
+      "rmse": 24.70103203197457
+    },
+    "lasso": {
+      "best_alpha": 0.1,
+      "cv_r2": 0.9941211630059918,
+      "test_r2": 0.9930250563326836,
+      "mae": 20.113493930121134,
+      "rmse": 24.64875460862647
+    }
+  },
+  "lasso_coefficients": {
+    "monthly_recharge_inr": 269.5999891850186,
+    "tenure_months": 0.0,
+    "hours_watched_per_week": -0.0,
+    "hd_hours_per_week": 30.980261110443287,
+    "sports_hours_per_week": 23.867187827128586,
+    "channels_watched": 0.0,
+    "support_calls_90d": -0.9309258386384792
+  },
+  "lasso_zero_features": [
+    "tenure_months",
+    "hours_watched_per_week",
+    "channels_watched"
+  ],
+  "coefficient_stability": {
+    "linear": {
+      "coefficients": [
+        -5.731494761514313,
+        -1.7121639243987217,
+        -4.838557009348349,
+        -7.736449235337262,
+        -4.7334685271530414
+      ],
+      "population_std_ddof0": 1.9451437152262696
+    },
+    "ridge_alpha_30": {
+      "coefficients": [
+        13.259815780935432,
+        15.553739622958513,
+        13.581189317537183,
+        13.023673462044146,
+        13.78605450139018
+      ],
+      "population_std_ddof0": 0.8955216720008168
+    }
+  },
+  "priority": {
+    "count": 15,
+    "sum_revenue_at_risk_inr": 8716.530696338821,
+    "actual_churners": 12
+  }
+}
