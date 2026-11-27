@@ -14,7 +14,7 @@ Use Python 3.11 or 3.12 and SQLite 3.25 or newer. On Windows PowerShell, run the
 2. `.\.venv\Scripts\Activate.ps1` (Windows PowerShell)
 3. `python -m pip install --upgrade pip`
 4. `pip install -r requirements.txt`
-5. `pip freeze > environment-freeze.txt (optional: records the exact environment without overwriting the pinned project requirements)`
+5. `pip freeze > environment-freeze.txt `
 6. `python generate_data.py`
 7. `python part_a.py`
 8. `python part_b.py`
